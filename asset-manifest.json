@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Semaforos-con-react/static/css/main.a43dcf5f.css",
+    "main.js": "/Semaforos-con-react/static/js/main.68cc9aba.js",
+    "index.html": "/Semaforos-con-react/index.html",
+    "main.a43dcf5f.css.map": "/Semaforos-con-react/static/css/main.a43dcf5f.css.map",
+    "main.68cc9aba.js.map": "/Semaforos-con-react/static/js/main.68cc9aba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a43dcf5f.css",
+    "static/js/main.68cc9aba.js"
+  ]
+}
