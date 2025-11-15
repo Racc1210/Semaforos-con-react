@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/Semaforos-con-react",
+  base: "/Semaforos-con-react/Semaforo-react",
   plugins: [react()],
 })
