@@ -35,20 +35,20 @@ class Referencia:
         time.sleep(1)
         self.tiempo += 1
         if self.tiempo > 60:
-            self.tiempo = 0
+            self.tiempo = 1
         print(self.tiempo)
 
 
 def Sincronizacion(Semaforo, seccion, referencia):
     while True:
-        if referencia.tiempo >= seccion['inicio'] and referencia.tiempo <= seccion['fin']:
-            if referencia.tiempo <= seccion['fin'] - 3:
+        if referencia.tiempo >= seccion['inicio'] and referencia.tiempo <= seccion['fin']-1:
+            if referencia.tiempo <= seccion['fin'] - 4:
                 Semaforo.Verde()
             else:
                 Semaforo.Amarillo() 
         else:
             Semaforo.Rojo()
-        #print(Semaforo.estado())
+        time.sleep(0.1)
 
 def Temporizador(referencia,Semaforos):
     while True:        
@@ -56,15 +56,12 @@ def Temporizador(referencia,Semaforos):
         for i in Semaforos:
            print(i.estado()) 
         
-
-
 if __name__ == "__main__":
     Semaforos = [Semaforo(i) for i in range (1,5)]
     referencia =  Referencia()
     ciclo = 60
     Secciones = ciclo//4
 
-     
     hilos = []
     for s in range(len(Semaforos)):
         h = threading.Thread(target=Sincronizacion, args=(Semaforos[s], {'inicio': (Secciones*s)+1, 'fin': Secciones*(s+1)}, referencia))
